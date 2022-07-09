@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Chess RTS : Prototype</title>
+        <script src="main.js"></script>
+    </head>
+    <body bgcolor="yellow" onload="onBodyLoad()">        
+        
+        <h1>Chess, but RTS</h1>
+        <hr>
+
+        <form onsubmit="return false">
+            Socket Server IP: <input type="text" id="ws_ip" value="?.?.?.?:7000"/>
+            <button onclick="onWSConnectButton()">Connect</button>
+            <text id="conn_status"></text>
+            <button onclick="onWSPingButton()" disabled id="ping_btn">Ping</button>
+            <text id="ping"></text>
+            <br>
+            Game ID: <input type="text" id="game_id" value=""/>
+            <button onclick="onJoinGame()" disabled id="join_btn">Host / Join</button>
+            <button onclick="onSpectateGame()" disabled id = "spec_btn">Spectate</button>
+            <text id="game_status"></text>
+            <br>
+        </form>
+
+        <hr>
+        <canvas id="canvas" height="400" width="400" onclick="onBoardClick(event)" style="touch-action: manipulation"></canvas>
+
+        <img id="cell_w" src="cell_w.png" height="50" width="50" hidden>
+        <img id="cell_b" src="cell_b.png" height="50" width="50" hidden>
+
+    </body>
+</html>
